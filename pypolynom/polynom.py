@@ -21,6 +21,8 @@ def sqrt(x):
 def polynom(a, b, c):
     """Solve the polygon of order two.
 
+    .. math:: a\cdotx^2 + b\cdotx + c = 0
+
     :param float a: a value of the polynom
     :param float b: b value of the polynom
     :param float c: c value of the polynom
