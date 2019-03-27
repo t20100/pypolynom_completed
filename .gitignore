@@ -1,0 +1,8 @@
+
+# Applied to all the trees
+*.pyc
+*.py,cover
+.*
+
+# Applied only at the root of the project
+/local_stuffs
