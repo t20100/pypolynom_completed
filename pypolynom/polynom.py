@@ -19,12 +19,16 @@ def sqrt(x):
 
 
 def polynom(a, b, c):
-    """Compute the polygon of order two
+    """Solve the polygon of order two.
+
     :param float a: a value of the polynom
     :param float b: b value of the polynom
     :param float c: c value of the polynom
     :rtype: List[float]
     """
+    if a == 0:
+        # Not a polynom
+        raise ValueError("Not a quadratic equation (a==0)")
     delta = pow2(b) - 4.0 * a * c
     solutions = []
     if delta > 0:
