@@ -46,13 +46,14 @@ before_test:
 
 test_script:
     # Run tests from source directory
-    - python -m unittest
+    - "python -m unittest"
     
     # Run tests from installed package
     # Move to another directory to avoid running from source
-    - mkdir tmp
-    - cd tmp
-    - python -m pypolynom.test
+    - "mkdir tmp"
+    - "cd tmp"
+    - "python -m pypolynom.test"
+    - "cd .."
 
 after_test:
     # Leave test virtualenv
