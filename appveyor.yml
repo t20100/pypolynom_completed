@@ -1,0 +1,64 @@
+image: Visual Studio 2015
+
+# fetch repository as zip archive
+shallow_clone: true
+
+environment:
+    matrix:
+        # Python 3.6
+        - PYTHON_DIR: "C:\\Python36-x64"
+
+        # Python 3.7
+        - PYTHON_DIR: "C:\\Python37-x64"
+
+install:
+    # Add Python to PATH
+    - "SET PATH=%PYTHON_DIR%;%PYTHON_DIR%\\Scripts;%PATH%"
+
+build_script:
+    # Create build virtualenv
+    - "python -m venv --clear build_venv"
+    - "build_venv\\Scripts\\activate.bat"
+
+    # Upgrade/install distribution modules
+    - "python -m pip install --upgrade pip"
+    - "pip install --upgrade setuptools wheel"
+
+    # Build source tarball and wheel
+    - "python setup.py sdist"
+    - "python setup.py bdist_wheel"
+    - ps: "ls dist"
+
+    # Leave build virtualenv
+    - "build_venv\\Scripts\\deactivate.bat"
+    - "rmdir build_venv /s /q"
+
+before_test:
+    # Create test virtualenv
+    - "python -m venv --clear test_venv"
+    - "test_venv\\Scripts\\activate.bat"
+
+    # Upgrade pip
+    - "python -m pip install --upgrade pip"
+
+    # Install project from wheel
+    - "pip install --pre dist/*.whl"
+
+test_script:
+    # Run tests from source directory
+    - python -m unittest
+    
+    # Run tests from installed package
+    # Move to another directory to avoid running from source
+    - mkdir tmp
+    - cd tmp
+    - python -m pypolynom.test
+
+after_test:
+    # Leave test virtualenv
+    - "test_venv\\Scripts\\deactivate.bat"
+    - "rmdir test_venv /s /q"
+
+artifacts:
+    # Archive the generated packages
+    - path: dist\*
