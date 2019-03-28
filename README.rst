@@ -8,9 +8,7 @@ It provides a simple project for the practical sessions of a software engineerin
 Installation
 ------------
 
-.. code-block:: bash
-
-   pip install pypolynom
+Simply run: ``pip install pypolynom``
 
 
 Documentation
@@ -22,11 +20,11 @@ The documentation is available here: TBD
 Testing
 -------
 
-To test the project, run `python -m unittest` in source directory.
+To test the project, run ``python -m unittest`` in source directory.
 
 License
 -------
 
 The source code of this project is licensed under the MIT license.
-See the `LICENSE <https://gitlab.esrf.fr/silx/silx-trainings/pypolynom/blob/master/LICENSE>`_ file.
+See the `LICENSE <https://gitlab.esrf.fr/silx/silx-trainings/pypolynom_completed/blob/master/LICENSE>`_ file.
 
