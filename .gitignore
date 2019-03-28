@@ -6,3 +6,8 @@
 
 # Applied only at the root of the project
 /local_stuffs
+
+# Distribution
+build/
+dist/
+*.egg-info/
