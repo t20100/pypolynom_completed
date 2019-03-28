@@ -42,7 +42,7 @@ before_test:
     - "python -m pip install --upgrade pip"
 
     # Install project from wheel
-    - "pip install --pre dist/*.whl"
+    - "pip install --pre dist\\*.whl"
 
 test_script:
     # Run tests from source directory
