@@ -1,11 +1,10 @@
-
 """
 Test module.
 
 .. code-block::
 
     # Test the project
-    python -m unittst
+    python -m unittest
 
     # Test coveraage with percentage of coverage per modules
     python -m coverage run -m unittest
