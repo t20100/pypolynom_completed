@@ -6,16 +6,16 @@ Test module.
     # Test the project
     python -m unittest
 
-    # Test coveraage with percentage of coverage per modules
+    # Test coverage with percentage of coverage per module
     python -m coverage run -m unittest
     python -m coverage report
 
-    # Test coveraage with file annotation
+    # Test coverage with file annotation
     python -m coverage run -m unittest
     python -m coverage annotate
 
 
-It also can be achived with a single command line using libraries `pytest` and
+It also can be achived with a single command line using the `pytest` library and
 extension library `pytest-cov`.
 
 .. code-block::
@@ -23,9 +23,9 @@ extension library `pytest-cov`.
     # Test the project
     python -m pytest
 
-    # Test coveraage with percentage of coverage per modules
+    # Test coverage with percentage of coverage per module
     python -m pytest --cov pypolynom
 
-    # Test coveraage with file annotation
+    # Test coverage with file annotation
     python3.5 -m pytest --cov pypolynom --cov-report annotate
 """
