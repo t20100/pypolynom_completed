@@ -52,7 +52,7 @@ setup(
     # Description of the project
 
     description='A simple polynom solver',
-    log_description=get_readme(),
+    long_description=get_readme(),
     url='https://gitlab.esrf.fr/silx/silx-trainings/pypolynom',
     classifiers=classifiers,
     # author='',
