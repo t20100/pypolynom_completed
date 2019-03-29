@@ -31,5 +31,5 @@ script:
     # Run the tests on the installed version
     # Change directory in order to avoid importing from the source
     - mkdir tmp
-      cd tmp
+    - cd tmp
     - python -m pypolynom.test
