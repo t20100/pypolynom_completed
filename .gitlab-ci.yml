@@ -43,7 +43,7 @@ test_tarball_py37:
         - pip install --pre dist/*.tar.gz
     script:
         - mkdir tmp; cd tmp
-        - python -m pypolynom.test
+        - python -m unittest discover pypolynom.test
 
 
 pages:
