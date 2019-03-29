@@ -9,6 +9,7 @@ See documentation and sample setup.py from the Python Packaging Authority(PyPA) 
 
 import os
 from setuptools import setup, find_packages
+from setuptools.extension import Extension
 
 
 def get_readme():
@@ -45,7 +46,8 @@ setup(
     name='pypolynom',
     version='0.0.1',
     packages=find_packages(),
-    # alternative: ['pypolynom', 'pypolynom.test'],
+    # or packages=['pypolynom', 'pypolynom.test'],
+    ext_modules=[Extension('pypolynom.cpolynom', ['pypolynom/cpolynom.pyx'])],
 
     # Every thing below is optional
 
@@ -63,7 +65,7 @@ setup(
     # Project requirements
 
     python_requires='>=3.4',
-    setup_requires=['setuptools'],
+    setup_requires=['setuptools', 'wheel', 'cython'],
     install_requires=['numpy>=1.8'],
     # extra_requires={},
 
