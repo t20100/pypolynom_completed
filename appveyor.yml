@@ -45,10 +45,7 @@ before_test:
     - "pip install --pre --find-links dist/ pypolynom"
 
 test_script:
-    # Run tests from source directory
-    - "python -m unittest"
-    
-    # Run tests from installed package
+    # Run tests for installed package
     # Move to another directory to avoid running from source
     - "mkdir tmp"
     - "cd tmp"
