@@ -33,7 +33,7 @@ extension library `pytest-cov`.
     python3.5 -m pytest --cov trainingproject --cov-report annotate
 """
 
-def suite():
+def suite_without_gui():
     import unittest
     from . import test_mathutil
     from . import test_polynom
@@ -44,11 +44,16 @@ def suite():
     return suite
 
 
+def suite():
+    # For convinience
+    return suite_without_gui()
+
+
 def suite_with_gui():
     import unittest
     from . import test_gui
 
-    result = unittest.TestSuite()
-    result.addTest(suite())
-    result.addTest(test_gui.suite())
-    return result
+    suite = unittest.TestSuite()
+    suite.addTest(suite_without_gui())
+    suite.addTest(test_gui.suite())
+    return suite

@@ -30,7 +30,7 @@ test_wheel_py37:
         - pip install --pre dist/*.whl
     script:
         - mkdir tmp; cd tmp
-        - python -m unittest discover pypolynom.test
+        - python -m unittest pypolynom.test.suite_without_gui
 
 
 test_tarball_py37:
@@ -43,7 +43,7 @@ test_tarball_py37:
         - pip install --pre dist/*.tar.gz
     script:
         - mkdir tmp; cd tmp
-        - python -m unittest discover pypolynom.test
+        - python -m unittest pypolynom.test.suite_without_gui
 
 
 pages:
