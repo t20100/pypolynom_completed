@@ -1,5 +1,3 @@
-.. currentmodule:: pypolynom.gui
-
 :mod:`gui`: gui
 -----------------------
 

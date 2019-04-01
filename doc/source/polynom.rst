@@ -1,5 +1,3 @@
-.. currentmodule:: pypolynom.polynom
-
 :mod:`polynom`: Polynom
 -----------------------
 

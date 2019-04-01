@@ -1,5 +1,3 @@
-.. currentmodule:: pypolynom.mathutil
-
 :mod:`mathutil`: mathutil
 -----------------------
 
