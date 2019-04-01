@@ -42,3 +42,13 @@ def suite():
     suite.addTest(test_mathutil.suite())
     suite.addTest(test_polynom.suite())
     return suite
+
+
+def suite_with_gui():
+    import unittest
+    from . import test_gui
+
+    result = unittest.TestSuite()
+    result.addTest(suite())
+    result.addTest(test_gui.suite())
+    return result
