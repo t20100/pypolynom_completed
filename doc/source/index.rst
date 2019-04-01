@@ -12,6 +12,8 @@ Contents:
    :maxdepth: 2
    
    polynom
+   mathutil
+   gui
    tutorials/index
 
 
