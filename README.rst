@@ -8,7 +8,7 @@ It provides a simple project for the practical sessions of a software engineerin
 Installation
 ------------
 
-Simply run: ``pip install pypolynom``
+Simply run: ``pip install trainingproject``
 
 
 Documentation
@@ -33,11 +33,11 @@ License
 -------
 
 The source code of this project is licensed under the MIT license.
-See the `LICENSE <https://gitlab.esrf.fr/silx/silx-trainings/pypolynom_completed/blob/master/LICENSE>`_ file.
+See the `LICENSE <https://gitlab.esrf.fr/silx/trainingproject_completed/blob/master/LICENSE>`_ file.
 
 
-.. |Gitlab Status| image:: https://gitlab.esrf.fr/silx/silx-trainings/pypolynom_completed/badges/master/pipeline.svg
-    :target: https://gitlab.esrf.fr/silx/silx-trainings/pypolynom_completed/pipelines
+.. |Gitlab Status| image:: https://gitlab.esrf.fr/silx/trainingproject_completed/badges/master/pipeline.svg
+    :target: https://gitlab.esrf.fr/silx/trainingproject_completed/pipelines
 
 .. |Travis Status| image:: https://travis-ci.com/t20100/pypolynom_completed.svg?branch=master
     :target: https://travis-ci.com/t20100/pypolynom_completed
