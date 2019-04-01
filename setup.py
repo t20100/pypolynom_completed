@@ -47,7 +47,7 @@ setup(
     version='0.0.1',
     packages=find_packages(),
     # or packages=['pypolynom', 'pypolynom.test'],
-    ext_modules=[Extension('pypolynom.cpolynom', ['pypolynom/cpolynom.pyx'])],
+    ext_modules=[Extension('trainingproject.cpolynom', ['trainingproject/cpolynom.pyx'])],
 
     # Every thing below is optional
 
