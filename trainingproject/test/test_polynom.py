@@ -6,20 +6,6 @@ import unittest
 import math
 from .. import polynom
 
-class TestSqrt(unittest.TestCase):
-
-    def test_integer(self):
-        result = polynom.sqrt(4)
-        self.assertEqual(result, 2)
-
-    def test_float(self):
-        result = polynom.sqrt(0.5)
-        self.assertAlmostEqual(result, 0.7071, places=4)
-
-    def test_string(self):
-        with self.assertRaises(TypeError):
-            result = polynom.sqrt("mmm")
-
 
 class TestPolygom(unittest.TestCase):
 
@@ -65,10 +51,3 @@ class TestPolygom(unittest.TestCase):
     def test_not_polynom(self):
         with self.assertRaises(ValueError):
             result = polynom.polynom(0, 0, 0)
-
-
-class TestPow2(unittest.TestCase):
-
-    def test_0_roots(self):
-        result = polynom.pow2(2)
-        self.assertEqual(result, 4)

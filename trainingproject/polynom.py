@@ -5,17 +5,8 @@
 __authors__ = ["Pierre Knobel", "Jerome Kieffer", "Pierre Palero",
                "Henri Payno", "Armando Sole", "Valentin Valls",
                "Thomas Vincent"]
-__date__ = "27/03/2019"
+__date__ = "01/04/2019"
 __license__ = "MIT"
-
-
-def sqrt(x):
-    """Return the square root of x
-
-    :param float x: Input value
-    :rtype: float
-    """
-    return x**0.5
 
 
 def polynom(a, b, c):
@@ -39,11 +30,3 @@ def polynom(a, b, c):
     elif delta == 0:
         solutions.append(-b/(2.0*a))
     return solutions
-
-
-def pow2(x):
-    """Return the square of x
-    :param float x: input value
-    :rtype: float
-    """
-    return x*x
