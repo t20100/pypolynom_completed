@@ -6,6 +6,9 @@ Test module.
     # Test the project
     python -m unittest
 
+    # Test the project using the suite
+    python -m unittest trainingproject.test.suite
+
     # Test coverage with percentage of coverage per module
     python -m coverage run -m unittest
     python -m coverage report
@@ -24,8 +27,18 @@ extension library `pytest-cov`.
     python -m pytest
 
     # Test coverage with percentage of coverage per module
-    python -m pytest --cov pypolynom
+    python -m pytest --cov trainingproject
 
     # Test coverage with file annotation
-    python3.5 -m pytest --cov pypolynom --cov-report annotate
+    python3.5 -m pytest --cov trainingproject --cov-report annotate
 """
+
+def suite():
+    import unittest
+    from . import test_mathutil
+    from . import test_polynom
+
+    suite = unittest.TestSuite()
+    suite.addTest(test_mathutil.suite())
+    suite.addTest(test_polynom.suite())
+    return suite

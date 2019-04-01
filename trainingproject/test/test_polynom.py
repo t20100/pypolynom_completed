@@ -51,3 +51,10 @@ class TestPolygom(unittest.TestCase):
     def test_not_polynom(self):
         with self.assertRaises(ValueError):
             result = polynom.polynom(0, 0, 0)
+
+
+def suite():
+    loadTests = unittest.defaultTestLoader.loadTestsFromTestCase
+    suite = unittest.TestSuite()
+    suite.addTest(loadTests(TestPolygom))
+    return suite
