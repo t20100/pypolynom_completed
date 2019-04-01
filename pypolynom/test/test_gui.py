@@ -27,8 +27,8 @@ class MockFunction(object):
     def callCount(self):
         return len(self._arguments)
 
-    def __call__(self, a, b, c):
-        self._arguments.append([a, b, c])
+    def __call__(self, *args):
+        self._arguments.append(args)
         if isinstance(self._result, Exception):
             raise self._result
         return self._result
@@ -73,7 +73,7 @@ class TestUnit(unittest.TestCase):
         self.assertEqual(solver._resultWidget.text(), "No solution")
         # Check the protocol
         self.assertEqual(self._mock.callCount(), 1)
-        self.assertEqual(self._mock._arguments[0], [0, 1, 2])
+        self.assertEqual(self._mock._arguments[0], (0, 1, 2))
 
     def _test_1_result(self):
         # It is not needed to test it. Cause it is the same coverage as test_2_result
@@ -90,7 +90,7 @@ class TestUnit(unittest.TestCase):
         self.assertEqual(solver._resultWidget.text(), "0.000 1.000")
         # Check the protocol
         self.assertEqual(self._mock.callCount(), 1)
-        self.assertEqual(self._mock._arguments[0], [0, 1, 2])
+        self.assertEqual(self._mock._arguments[0], (0, 1, 2))
 
     def test_argument_error(self):
         # Note that it can be hard to test dialogs, as we lose the hand on the
