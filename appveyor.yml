@@ -22,7 +22,7 @@ build_script:
 
     # Upgrade/install distribution modules
     - "python -m pip install --upgrade pip"
-    - "pip install --upgrade setuptools wheel"
+    - "pip install --upgrade setuptools wheel cython"
 
     # Build source tarball and wheel
     - "python setup.py sdist"
@@ -45,14 +45,11 @@ before_test:
     - "pip install --pre --find-links dist/ pypolynom"
 
 test_script:
-    # Run tests from source directory
-    - "python -m unittest"
-    
-    # Run tests from installed package
+    # Run tests for installed package
     # Move to another directory to avoid running from source
     - "mkdir tmp"
     - "cd tmp"
-    - "python -m pypolynom.test"
+    - "python -m unittest discover pypolynom.test"
     - "cd .."
 
 after_test:

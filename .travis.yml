@@ -1,18 +1,16 @@
 dist: xenial
 language: python
+os: linux
 
 matrix:
     include:
         - python: 3.6
-          os: linux
-
         - python: 3.7
-          os: linux
 
 before_install:
-    # Upgrade distribution modules
+    # Upgrade/install distribution and "setup_requires" modules
     - python -m pip install --upgrade pip
-    - pip install --upgrade setuptools wheel
+    - pip install --upgrade setuptools wheel cython
 
 install:
     # Generate source archive and wheel
@@ -25,11 +23,7 @@ before_script:
     - pip install --pre dist/pypolynom*.whl
 
 script:
-    # Run the tests on the source tree directly
-    - python -m unittest
-
     # Run the tests on the installed version
     # Change directory in order to avoid importing from the source
-    - mkdir tmp
-    - cd tmp
-    - python -m pypolynom.test
+    - mkdir tmp; cd tmp
+    - python -m unittest discover pypolynom.test

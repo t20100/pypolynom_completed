@@ -9,9 +9,6 @@ __date__ = "01/04/2019"
 __license__ = "MIT"
 
 
-from . import mathutil
-
-
 def polynom(a, b, c):
     """Solve the polygon of order two.
 
@@ -25,11 +22,11 @@ def polynom(a, b, c):
     if a == 0:
         # Not a polynom
         raise ValueError("Not a quadratic equation (a==0)")
-    delta = mathutil.pow2(b) - 4.0 * a * c
+    delta = (b**2.0) - 4.0 * a * c
     solutions = []
     if delta > 0:
-        solutions.append((-b + mathutil.sqrt(delta)) / (2.0 * a))
-        solutions.append((-b - mathutil.sqrt(delta)) / (2.0 * a))
+        solutions.append((-b + (delta**0.5)) / (2.0 * a))
+        solutions.append((-b - (delta**0.5)) / (2.0 * a))
     elif delta == 0:
-        solutions.append(-b/(2.0*a))
+        solutions.append(-b / (2.0 * a))
     return solutions

@@ -1,0 +1,7 @@
+include README.rst
+include LICENSE
+include MANIFEST.in
+include setup.cfg
+include pyproject.toml
+recursive-include pypolynom *.pyx *.pxd *.pxi
+
