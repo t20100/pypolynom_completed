@@ -3,6 +3,8 @@
 *.pyc
 *.py,cover
 .*
+*.c
+*.cpp
 
 # Applied only at the root of the project
 /local_stuffs
