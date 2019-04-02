@@ -45,7 +45,7 @@ classifiers = [
 setup(
     name='pypolynom',
     version='0.0.1',
-    packages=find_packages(),
+    packages=find_packages(exclude=['doc']),
     # or packages=['pypolynom', 'pypolynom.test'],
     ext_modules=[Extension('pypolynom.cpolynom', ['pypolynom/cpolynom.pyx'])],
 
