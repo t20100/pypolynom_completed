@@ -61,6 +61,8 @@ build_doc_with_wheel:
         - linux
     image: docker-registry.esrf.fr/dau/tomwer:python3.5_stretch_pyqt5
     before_script:
+        - apt-get update && apt-get upgrade
+        - apt-get install --yes --force-yes pandoc
         - python -m pip install --upgrade pip
         - pip install --pre --find-links dist/ pypolynom[doc]
     script:
