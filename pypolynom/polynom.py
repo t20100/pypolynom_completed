@@ -15,7 +15,7 @@ from . import mathutil
 def polynom(a, b, c):
     """Solve the polygon of order two.
 
-    .. math:: a\cdotx^2 + b\cdotx + c = 0
+    .. math:: a \cdot x^2 + b \cdot x + c = 0
 
     :param float a: a value of the polynom
     :param float b: b value of the polynom
