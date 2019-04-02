@@ -49,7 +49,7 @@ test_script:
     # Move to another directory to avoid running from source
     - "mkdir tmp"
     - "cd tmp"
-    - "python -m unittest discover pypolynom.test"
+    - "python -m unittest pypolynom.test.suite_without_gui"
     - "cd .."
 
 after_test:
