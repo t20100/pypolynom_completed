@@ -1,6 +1,6 @@
 stages:
   - build
-  - test
+  #- test
   - doc
   - deploy
 
@@ -64,6 +64,8 @@ build_doc_with_wheel_py37:
         - python -m pip install --upgrade pip
         - pip install --pre --find-links dist/ pypolynom[doc]
     script:
+        - pip list
+        - python -c "import PyQt5.Qt; print(PyQt5.Qt.__file__)"
         - python setup.py build_sphinx -b html
         - mv build/sphinx/html .
     artifacts:
