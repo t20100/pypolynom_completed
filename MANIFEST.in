@@ -4,4 +4,6 @@ include MANIFEST.in
 include setup.cfg
 include pyproject.toml
 recursive-include pypolynom *.pyx *.pxd *.pxi
-
+include doc/make.bat
+include doc/Makefile
+recursive-include doc *.py *.rst *.ipynb
