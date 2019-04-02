@@ -55,18 +55,16 @@ test_tarball_py37:
         - python -m unittest pypolynom.test.suite_without_gui
 
 
-build_doc_with_wheel_py37:
+build_doc_with_wheel:
     stage: doc
     tags:
         - linux
-    image: python:3.7-stretch
+    image: docker-registry.esrf.fr/dau/tomwer:python3.5_stretch_pyqt5
     before_script:
         - python -m pip install --upgrade pip
         - pip install --pre --find-links dist/ pypolynom[doc]
     script:
-        - pip list
-        - python -c "import PyQt5.Qt; print(PyQt5.Qt.__file__)"
-        - python setup.py build_sphinx -b html
+        - /usr/bin/xvfb-run --server-args="-screen 0 1024x768x24" -a python setup.py build_sphinx -b html
         - mv build/sphinx/html .
     artifacts:
         paths:
