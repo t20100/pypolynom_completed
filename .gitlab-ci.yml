@@ -61,7 +61,7 @@ build_doc_with_wheel_py37:
     image: python:3.7-stretch
     before_script:
         - python -m pip install --upgrade pip
-        - pip install --pre dist/*.whl
+        - pip install --pre --find-links dist/ pypolynom[doc]
     script:
         - python setup.py build_sphinx -b html
         - mv build/sphinx/html .
