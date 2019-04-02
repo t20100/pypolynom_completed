@@ -36,8 +36,8 @@ The source code of this project is licensed under the MIT license.
 See the `LICENSE <https://gitlab.esrf.fr/silx/trainingproject_completed/blob/master/LICENSE>`_ file.
 
 
-.. |Gitlab Status| image:: https://gitlab.esrf.fr/silx/trainingproject_completed/badges/master/pipeline.svg
-    :target: https://gitlab.esrf.fr/silx/trainingproject_completed/pipelines
+.. |Gitlab Status| image:: https://gitlab.esrf.fr/silx/pypolynom_completed/badges/master/pipeline.svg
+    :target: https://gitlab.esrf.fr/silx/pypolynom_completed/pipelines
 
 .. |Travis Status| image:: https://travis-ci.com/t20100/pypolynom_completed.svg?branch=master
     :target: https://travis-ci.com/t20100/pypolynom_completed
