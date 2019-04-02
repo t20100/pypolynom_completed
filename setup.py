@@ -66,8 +66,10 @@ setup(
 
     python_requires='>=3.4',
     setup_requires=['setuptools', 'wheel', 'cython'],
-    install_requires=['numpy>=1.8'],
-    # extra_requires={},
+    install_requires=['numpy>=1.8', 'PyQt5'],
+    extra_requires={
+        'doc': ['sphinx', 'nbsphinx']
+        },
 
     # Additional resources
     # package_data={},
