@@ -8,17 +8,25 @@ build_py37:
     stage: build
     tags:
         - linux
-    image: python:3.7-stretch
+    image: quay.io/pypa/manylinux1_x86_64
     before_script:
+        - export PATH=/opt/python/cp37-cp37m/bin/:${PATH}
         - python -m pip install --upgrade pip
         - pip install --upgrade setuptools wheel cython
     script:
         - python setup.py sdist bdist_wheel
+        # Run auditwheel (not needed for this project)
+        - mkdir tmp
+        - mv dist/*.whl tmp/
+        - for WHEEL in tmp/*.whl; do
+              auditwheel repair "${WHEEL}" -w dist/;
+          done
     artifacts:
         paths:
             - dist/
         when: on_success
         expire_in: 4h
+
 
 test_wheel_py37:
     stage: test
@@ -46,6 +54,23 @@ test_tarball_py37:
         - python -m unittest pypolynom.test.suite_without_gui
 
 
+build_doc_with_wheel_py37:
+    stage: test
+    tags:
+        - linux
+    image: python:3.7-stretch
+    before_script:
+        - python -m pip install --upgrade pip
+        - pip install --pre dist/*.whl
+    script:
+        - python setup.py build_sphinx -b html
+        - mv build/sphinx/html .
+    artifacts:
+        paths:
+            - html
+        when: on_success
+        expire_in: 4h
+
 pages:
     stage: deploy
     tags:
@@ -55,11 +80,11 @@ pages:
         - apt-get update
         - apt-get install tree
     script:
-        - rm -rf public
-        - mkdir -p public
+        - rm -rf public; mkdir -p public
         - cp dist/* public
+        - mv html public/doc
         - cd public
-        - tree -H '.' -h -T 'pypolynom' --noreport --charset utf-8 -o index.html
+        - tree -H '.' -L 1 -h -T 'pypolynom' --noreport --charset utf-8 -o index.html
         - ls -Rl
     artifacts:
         paths:
