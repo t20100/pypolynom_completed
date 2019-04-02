@@ -14,7 +14,7 @@ Simply run: ``pip install pypolynom``
 Documentation
 -------------
 
-The documentation is available here: TBD
+The documentation is available here: https://silx.gitlab-pages.esrf.fr/pypolynom_completed
 
 
 Testing
