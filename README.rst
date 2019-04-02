@@ -1,14 +1,14 @@
-trainingproject
-===============
+pypolynom
+=========
 
-The *trainingproject* project is for educational purpose.
+The *pypolynom* project is for educational purpose.
 It provides a simple project for the practical sessions of a software engineering training (See https://github.com/silx-kit/silx-training/tree/master/software_engineering).
 
 
 Installation
 ------------
 
-Simply run: ``pip install trainingproject``
+Simply run: ``pip install pypolynom``
 
 
 Documentation
