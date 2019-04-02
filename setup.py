@@ -55,7 +55,7 @@ setup(
 
     description='A simple polynom solver',
     long_description=get_readme(),
-    url='https://gitlab.esrf.fr/silx/silx-trainings/pypolynom',
+    url='https://gitlab.esrf.fr/silx/pypolynom',
     classifiers=classifiers,
     # author='',
     # author_email='',
@@ -66,9 +66,9 @@ setup(
 
     python_requires='>=3.4',
     setup_requires=['setuptools', 'wheel', 'cython'],
-    install_requires=['numpy>=1.8', 'PyQt5', 'jupyter_client'],
+    install_requires=['numpy>=1.8', 'PyQt5'],
     extras_require={
-        'doc': ['sphinx', 'nbsphinx']
+        'doc': ['sphinx', 'nbsphinx', 'jupyter_client']
         },
 
     # Additional resources
